@@ -32,3 +32,8 @@ apply_kernel_security() {
         HARDN_STATUS "info" "Kernel security settings applied successfully."
         return 0
 }
+
+# Entry point function that follows the naming convention used in hardn-main.sh
+install_and_configure_coredumps() {
+    apply_kernel_security
+}

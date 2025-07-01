@@ -48,3 +48,8 @@ configure_pam_password_quality() {
 
 configure_pam_password_quality
 
+
+# Entry point function that follows the naming convention used in hardn-main.sh
+install_and_configure_stig_pwquality() {
+    configure_pam_password_quality
+}

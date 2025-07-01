@@ -239,3 +239,8 @@ configure_auditd() {
 }
 
 
+
+# Entry point function that follows the naming convention used in hardn-main.sh
+install_and_configure_auditd() {
+    configure_auditd
+}

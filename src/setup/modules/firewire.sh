@@ -90,3 +90,8 @@ display_firewire_status() {
 # Execute the main function
 disable_firewire
 
+
+# Entry point function that follows the naming convention used in hardn-main.sh
+install_and_configure_firewire() {
+    HARDN_STATUS "error" "firewire module has no main function defined"
+}

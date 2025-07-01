@@ -17,3 +17,8 @@ restrict_compiler_access() {
     HARDN_STATUS "pass" "Compiler access restrictions applied."
     return 0
 }
+
+# Entry point function that follows the naming convention used in hardn-main.sh
+install_and_configure_compilers() {
+    HARDN_STATUS "error" "compilers module has no main function defined"
+}

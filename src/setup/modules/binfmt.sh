@@ -71,3 +71,8 @@ prevent_binfmt_misc_loading() {
 if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
     disable_binfmt_misc
 fi
+
+# Entry point function that follows the naming convention used in hardn-main.sh
+install_and_configure_binfmt() {
+    HARDN_STATUS "error" "binfmt module has no main function defined"
+}

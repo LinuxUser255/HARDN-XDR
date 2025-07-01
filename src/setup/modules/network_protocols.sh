@@ -109,3 +109,8 @@ unload_blacklisted_modules() {
 # Execute the main function
 harden_network_protocols
 
+
+# Entry point function that follows the naming convention used in hardn-main.sh
+install_and_configure_network_protocols() {
+    harden_network_protocols
+}

@@ -114,3 +114,8 @@ run_rkhunter_updates() {
 
 setup_rkhunter
 
+
+# Entry point function that follows the naming convention used in hardn-main.sh
+install_and_configure_rkhunter() {
+    setup_rkhunter
+}

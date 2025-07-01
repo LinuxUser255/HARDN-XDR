@@ -46,3 +46,8 @@ apply_mount_options_if_mounted() {
 
 secure_shared_memory
 
+
+# Entry point function that follows the naming convention used in hardn-main.sh
+install_and_configure_shared_mem() {
+    apply_mount_options_if_mounted
+}

@@ -30,3 +30,8 @@ check_deleted_files() {
 
 # Execute the function
 check_deleted_files
+
+# Entry point function that follows the naming convention used in hardn-main.sh
+install_and_configure_deleted_files() {
+    HARDN_STATUS "error" "deleted_files module has no main function defined"
+}

@@ -265,3 +265,8 @@ manage_suricata_service() {
 # Execute the main function
 setup_suricata
 
+
+# Entry point function that follows the naming convention used in hardn-main.sh
+install_and_configure_suricata() {
+    setup_suricata
+}

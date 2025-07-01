@@ -81,3 +81,8 @@ configure_usb_security() {
 }
 
 
+
+# Entry point function that follows the naming convention used in hardn-main.sh
+install_and_configure_usb() {
+    configure_usb_modprobe
+}

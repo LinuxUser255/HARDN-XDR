@@ -92,3 +92,8 @@ remove_unused_packages() {
 
 cleanup_system
 
+
+# Entry point function that follows the naming convention used in hardn-main.sh
+install_and_configure_purge_old_pkgs() {
+    HARDN_STATUS "error" "purge_old_pkgs module has no main function defined"
+}

@@ -297,3 +297,8 @@ configure_dns() {
 configure_dns
 
 
+
+# Entry point function that follows the naming convention used in hardn-main.sh
+install_and_configure_dns_config() {
+    configure_systemd_resolved
+}

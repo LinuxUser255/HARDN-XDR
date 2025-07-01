@@ -36,3 +36,8 @@ disable_service() {
                 ;;
         esac
 }
+
+# Entry point function that follows the naming convention used in hardn-main.sh
+install_and_configure_service_disable() {
+    HARDN_STATUS "error" "service_disable module has no main function defined"
+}

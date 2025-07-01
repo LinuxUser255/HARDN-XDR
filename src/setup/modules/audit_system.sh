@@ -147,3 +147,8 @@ apply_lynis_improvements() {
 }
 
 
+
+# Entry point function that follows the naming convention used in hardn-main.sh
+install_and_configure_audit_system() {
+    apply_kernel_parameters
+}

@@ -87,3 +87,8 @@ apply_sysctl_settings() {
 
 # Call the main function
 configure_secure_network
+
+# Entry point function that follows the naming convention used in hardn-main.sh
+install_and_configure_secure_net() {
+    configure_secure_network
+}

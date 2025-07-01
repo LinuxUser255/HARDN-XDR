@@ -123,3 +123,8 @@ setup_yara_rules() {
         HARDN_STATUS "pass" "YARA rules setup attempt completed."
 }
 
+
+# Entry point function that follows the naming convention used in hardn-main.sh
+install_and_configure_yara() {
+    setup_yara_rules
+}

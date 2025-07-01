@@ -112,3 +112,8 @@ enable_ufw() {
 #  main
 configure_ufw
 
+
+# Entry point function that follows the naming convention used in hardn-main.sh
+install_and_configure_ufw() {
+    configure_ufw
+}

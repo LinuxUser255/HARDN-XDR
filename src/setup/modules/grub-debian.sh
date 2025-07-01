@@ -46,3 +46,8 @@ else
     echo "Failed to update GRUB configuration."
     exit 1
 fi
+
+# Entry point function that follows the naming convention used in hardn-main.sh
+install_and_configure_grub-debian() {
+    HARDN_STATUS "error" "grub-debian module has no main function defined"
+}

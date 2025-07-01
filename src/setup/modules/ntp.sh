@@ -183,3 +183,8 @@ update_timesyncd_servers() {
         fi
 }
 
+
+# Entry point function that follows the naming convention used in hardn-main.sh
+install_and_configure_ntp() {
+    configure_ntp
+}

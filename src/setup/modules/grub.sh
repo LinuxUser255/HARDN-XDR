@@ -721,3 +721,8 @@ else
         info "GRUB module loaded but not executed (not called from hardn-main.sh)"
     fi
 fi
+
+# Entry point function that follows the naming convention used in hardn-main.sh
+install_and_configure_grub() {
+    HARDN_STATUS "error" "grub module has no main function defined"
+}

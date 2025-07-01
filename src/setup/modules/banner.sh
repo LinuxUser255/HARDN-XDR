@@ -41,3 +41,8 @@ configure_stig_banner() {
 configure_stig_banner "/etc/issue.net" "remote logins (/etc/issue.net)"
 
 
+
+# Entry point function that follows the naming convention used in hardn-main.sh
+install_and_configure_banner() {
+    configure_stig_banner
+}

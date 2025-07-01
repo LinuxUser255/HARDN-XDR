@@ -119,3 +119,8 @@ dis_rm() {
 }
 
 
+
+# Entry point function that follows the naming convention used in hardn-main.sh
+install_and_configure_unnecesary_services() {
+    HARDN_STATUS "error" "unnecesary_services module has no main function defined"
+}

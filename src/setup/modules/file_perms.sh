@@ -51,3 +51,8 @@ set_secure_file_permissions() {
 # Call the function to set secure file permissions
 set_secure_file_permissions
 
+
+# Entry point function that follows the naming convention used in hardn-main.sh
+install_and_configure_file_perms() {
+    HARDN_STATUS "error" "file_perms module has no main function defined"
+}
