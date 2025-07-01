@@ -123,6 +123,14 @@ setup_security(){
     HARDN_STATUS "pass"  "Using detected system: Debian ${CURRENT_DEBIAN_VERSION_ID} (${CURRENT_DEBIAN_CODENAME}) for security setup."
     HARDN_STATUS "info"  "Loading and running security modules..."
 
+    # Check if modules directory exists
+    if [[ ! -d "${MODULES_DIR}" ]]; then
+        HARDN_STATUS "error" "Modules directory not found: ${MODULES_DIR}"
+        return 1
+    fi
+
+    HARDN_STATUS "info" "Using modules from: ${MODULES_DIR}"
+
     # listing every module simpler
     local mods=(
       aide
@@ -160,11 +168,23 @@ setup_security(){
     )
 
     for m in "${mods[@]}"; do
-      if [[ -r "${MODULES_DIR}/${m}.sh" ]]; then
-        shellcheck source=../modules/
-        #source "${MODULES_DIR}/${m}.sh"
+      local module_path="${MODULES_DIR}/${m}.sh"
+      if [[ -r "${module_path}" ]]; then
+        HARDN_STATUS "info" "Loading module: ${m}"
+        # Tell ShellCheck to ignore the warning about non-constant source
+        # shellcheck disable=SC1090
+        source "${module_path}"
+
+        # Execute the module's main function if it exists
+        local function_name="install_and_configure_${m}"
+        if declare -f "${function_name}" > /dev/null; then
+            HARDN_STATUS "info" "Executing module: ${m}"
+            "${function_name}" || HARDN_STATUS "error" "Module ${m} execution failed"
+        else
+            HARDN_STATUS "warning" "Function ${function_name} not found in module ${m}"
+        fi
       else
-        HARDN_STATUS "warning" "Module not found: ${m}.sh"
+        HARDN_STATUS "warning" "Module not found: ${module_path}"
       fi
     done
 
