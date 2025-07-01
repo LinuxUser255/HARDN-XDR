@@ -11,7 +11,7 @@ export APT_LISTBUGS_FRONTEND=none
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 CURRENT_DEBIAN_VERSION_ID=""
 CURRENT_DEBIAN_CODENAME=""
-MODULES_DIR="${SCRIPT_DIR}/../modules"
+MODULES_DIR="${SCRIPT_DIR}/modules"
 
 HARDN_STATUS() {
     local status="$1"
@@ -140,7 +140,7 @@ setup_security(){
       dns_config
       file_perms
       firewire
-      grub
+    #  grub
       kernel_sec
       network_protocols
       ntp
@@ -161,7 +161,8 @@ setup_security(){
 
     for m in "${mods[@]}"; do
       if [[ -r "${MODULES_DIR}/${m}.sh" ]]; then
-        source "${MODULES_DIR}/${m}.sh"
+        shellcheck source=../modules/
+        #source "${MODULES_DIR}/${m}.sh"
       else
         HARDN_STATUS "warning" "Module not found: ${m}.sh"
       fi
