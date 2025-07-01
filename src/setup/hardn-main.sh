@@ -10,7 +10,8 @@ export APT_LISTBUGS_FRONTEND=none
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 CURRENT_DEBIAN_VERSION_ID=""
 CURRENT_DEBIAN_CODENAME=""
-MODULES_DIR="${SCRIPT_DIR}/../modules"
+MODULES_DIR="${SCRIPT_DIR}/modules"
+echo "Looking for modules in: ${MODULES_DIR}"
 
 HARDN_STATUS() {
         local status="$1"
