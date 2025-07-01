@@ -193,6 +193,20 @@ setup_security(){
     echo ""
 }
 
+cleanup() {
+    HARDN_STATUS "info" "Performing cleanup operations..."
+
+    # Clean up any temporary files created during installation
+    if [[ -d "/tmp/hardn-temp" ]]; then
+        rm -rf "/tmp/hardn-temp"
+    fi
+
+    # Reset any environment variables that are no longer needed
+    unset APT_LISTBUGS_FRONTEND
+
+    HARDN_STATUS "pass" "Cleanup completed successfully."
+}
+
 main() {
     print_ascii_banner
     show_system_info
