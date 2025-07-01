@@ -145,8 +145,8 @@ create_log_symlinks() {
         return 0
 }
 
-# Main function to set up central logging
-setup_central_logging() {
+# Main function to set up central logging - renamed to match the expected pattern in hardn-main.sh
+install_and_configure_central_logging() {
         HARDN_STATUS "info" "Setting up central logging for security tools..."
 
         # Execute each step in sequence, checking for failures
@@ -161,7 +161,8 @@ setup_central_logging() {
         return 0
 }
 
-# Execute the main function if this script is run directly
+# This conditional execution is kept but will not run when sourced from hardn-main.sh
+# It allows the script to be run directly for testing if needed
 if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
-    setup_central_logging
+    install_and_configure_central_logging
 fi

@@ -110,7 +110,5 @@ setup_chkrootkit() {
         configure_chkrootkit_cron
 }
 
-# Calling main
-setup_chkrootkit
 
 

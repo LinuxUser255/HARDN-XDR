@@ -80,6 +80,4 @@ configure_usb_security() {
         HARDN_STATUS "pass" "USB configuration complete: keyboards and mice allowed, storage blocked."
 }
 
-# Calling  main
-configure_usb_security
 

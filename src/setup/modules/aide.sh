@@ -13,6 +13,7 @@ install_and_configure_aide() {
             return 1
         fi
 
+        HARDN_STATUS "info" "Initializing AIDE database (this may take several minutes)..."
         aideinit >/dev/null 2>&1 || true
         mv /var/lib/aide/aide.db.new /var/lib/aide/aide.db >/dev/null 2>&1 || true
 
@@ -23,4 +24,4 @@ install_and_configure_aide() {
         return 0
 }
 
-install_and_configure_aide
+# Do NOT call the function here - it will be called from hardn-main.sh

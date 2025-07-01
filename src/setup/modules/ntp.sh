@@ -183,5 +183,3 @@ update_timesyncd_servers() {
         fi
 }
 
-# Execute the main function
-configure_ntp

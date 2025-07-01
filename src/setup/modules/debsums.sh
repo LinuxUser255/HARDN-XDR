@@ -84,7 +84,3 @@ setup_debsums() {
         fi
 }
 
-# Execute the main function only if the script is run directly
-if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
-    setup_debsums
-fi

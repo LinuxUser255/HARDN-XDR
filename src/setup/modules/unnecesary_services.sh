@@ -118,6 +118,4 @@ dis_rm() {
         HARDN_STATUS "pass" "Unnecessary services checked and disabled/removed where applicable."
 }
 
-# call main
-dis_rm
 

@@ -238,6 +238,4 @@ configure_auditd() {
         HARDN_STATUS "pass" "auditd configuration attempt completed."
 }
 
-# Call the main function
-configure_auditd
 

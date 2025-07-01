@@ -146,6 +146,4 @@ apply_lynis_improvements() {
         HARDN_STATUS "pass" "Lynis score improvements applied successfully."
 }
 
-#  main function
-apply_lynis_improvements
 

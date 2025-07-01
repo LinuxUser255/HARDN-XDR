@@ -115,5 +115,7 @@ reload_sysctl_settings() {
     sysctl --system >/dev/null 2>&1
 }
 
-# Execute the main function
-apply_kernel_hardening
+# Add a function that follows the naming convention used in hardn-main.sh
+install_and_configure_kernel_sec() {
+    apply_kernel_hardening
+}

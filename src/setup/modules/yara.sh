@@ -123,4 +123,3 @@ setup_yara_rules() {
         HARDN_STATUS "pass" "YARA rules setup attempt completed."
 }
 
-setup_yara_rules

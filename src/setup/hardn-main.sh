@@ -254,7 +254,18 @@ setup_security(){
         # shellcheck disable=SC1090
         for m in "${mods[@]}"; do
           if [[ -r "${MODULES_DIR}/${m}.sh" ]]; then
+            HARDN_STATUS "info" "Loading module: ${m}"
             source "${MODULES_DIR}/${m}.sh"
+
+            # Call the module's main function if it exists
+            # The function name should follow the pattern: install_and_configure_<module_name>
+            local function_name="install_and_configure_${m}"
+            if declare -f "$function_name" > /dev/null; then
+                HARDN_STATUS "info" "Running module: ${m}"
+                "$function_name"
+            else
+                HARDN_STATUS "warning" "Function ${function_name} not found in module ${m}.sh"
+            fi
           else
             HARDN_STATUS "warning" "Module not found: ${m}.sh"
           fi
